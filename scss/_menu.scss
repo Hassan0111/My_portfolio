@@ -11,7 +11,7 @@
         width: 28px;
         height: 3px;
         margin: 0 0 5px 0;
-        background: #fff;
+        background: set-text-color($primary-color);
         @include easeout;
     }
 
@@ -43,86 +43,94 @@
     width: 100%;
     opacity: 0.9;
     visibility: hidden;
-
+  
     &.show {
-        visibility: visible;
+      visibility: visible;
     }
-
+  
     &-branding,
     &-nav {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        justify-content: center;
-        float: left;
-        width: 50%;
-        height: 100vh;
-        overflow: hidden;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      width: 50%;
+      height: 100vh;
+      overflow: hidden;
     }
+  
     &-nav {
-        margin: 0;
-        padding: 0;
-        background: darken($primary-color, 5);
-        list-style: none;
-        transform: translate3d(0, -100%, 0);
-        @include easeout;
-
-        &.show {
-            // Slide in from top
-            transform: translate3d(0, 0, 0);
-        }
+      margin: 0;
+      padding: 0;
+      background: darken($primary-color, 5);
+      list-style: none;
+      transform: translate3d(0, -100%, 0);
+      @include easeout;
+  
+      &.show {
+        // Slide in from top
+        transform: translate3d(0, 0, 0);
+      }
     }
-
+  
     // Branding Side
     &-branding {
-        background: $primary-color;
-        transform: translate3d(0, 100%, 0);
-        @include easeout;
-
-        &.show {
-            // Slide in from bottom
-            transform: translate3d(0, 0, 0);
-        }
-
-        .portrait {
-            width: 250px;
-            height: 250px;
-            background: url('../img/portrait.jpg');
-            border-radius: 50%;
-            border: solid 3px $secondary-color;
-        }
+      background: $primary-color;
+      transform: translate3d(0, 100%, 0);
+      @include easeout;
+  
+      &.show {
+        // Slide in from bottom
+        transform: translate3d(0, 0, 0);
+      }
+  
+    //   .portrait {
+    //     width: 250px;
+    //     height: 250px;
+    //     background: url('../img/portrait.jpg');
+    //     border-radius: 50%;
+    //     border: solid 3px $secondary-color;
+    //   }
     }
-
+    img {
+        width: 253px;
+        height: 296px;
+        border-radius: 50%; //makes circle
+        border: solid 3px $secondary-color;
+      }
+  
+  
     .nav-item {
-        transform: translate3d(600px, 0, 0);
-        @include easeout;
-        &.show {
-            // Slide in from right
-            transform: translate3d(0, 0, 0);
-        }
-
-        &.current > a {
-            color: $secondary-color;
-        }
+      transform: translate3d(600px, 0, 0);
+      @include easeout;
+  
+      &.show {
+        // Slide in from right
+        transform: translate3d(0, 0, 0);
+      }
+  
+      &.current > a {
+        color: $secondary-color;
+      }
     }
-
+  
     .nav-link {
-        display: inline-block;
-        position: relative;
-        font-size: 30px;
-        text-transform: uppercase;
-        padding: 1rem 0;
-        font-weight: 300;
-        color: #fff;
-        text-decoration: none;
-        @include easeout;
-
-        &:hover {
-            color: $secondary-color;
-        }
+      display: inline-block;
+      position: relative;
+      font-size: 30px;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      font-weight: 300;
+      color: set-text-color($primary-color);
+      text-decoration: none;
+      @include easeout;
+  
+      &:hover {
+        color: $secondary-color;
+      }
     }
-
-}
+  }
 
 // Delay each nav item slide by 0.1s
 @for $x from 1 through 4 {
